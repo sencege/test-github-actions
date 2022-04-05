@@ -1,7 +1,5 @@
 -- Enter migration here
 
 
-s
-
 
 

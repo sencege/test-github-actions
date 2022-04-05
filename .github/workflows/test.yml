@@ -18,15 +18,4 @@ jobs:
             path: ./@app/db/migrations/current.sql
             trim: true
       - name: Echo current.sql
-        run: echo "${{ steps.current-migration.outputs.content }}"
-
-      - name: Get Changed Files
-        id: changed-files
-        uses: tj-actions/changed-files@v18.6
-
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
-
+        run: echo "${{ steps.current-migration.outputs.content == '-- Enter migration here' }}"
