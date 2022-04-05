@@ -16,6 +16,7 @@ jobs:
         uses: juliangruber/read-file-action@v1.1.4
         with:
             path: ./@app/db/migrations/current.sql
+            trim: true
       - name: Echo current.sql
         run: echo "${{ steps.current-migration.outputs.content }}"
 
