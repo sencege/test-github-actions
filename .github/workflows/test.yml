@@ -17,9 +17,8 @@ jobs:
         with:
             path: ./@app/db/migrations/current.sql
             trim: true
-      - name: Check if current.sql is dirty
-        if: ${{ steps.current-migration.outputs.content == '-- Enter migration here' }}
-        run: echo "Current.sql is clean"
       - name: Fail if current.sql dirty
         if: ${{ steps.current-migration.outputs.content != '-- Enter migration here' }}
         run: exit 1
+      - name: Print current.sql is clean
+        run: echo "Current.sql is clean"
