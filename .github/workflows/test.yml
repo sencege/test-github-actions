@@ -1,9 +1,7 @@
-name: Test File Empty
+name: Test Current.sql Empty
 
-on:
-  push:
-    branches:
-      - main
+on: [pull_request]
+
       
 jobs:
   check-current-sql:
