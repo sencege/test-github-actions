@@ -17,5 +17,5 @@ jobs:
         with:
             path: ./@app/db/migrations/current.sql
             trim: true
-      - name: Echo current.sql
+      - name: Check if current.sql is dirty
         run: echo "${{ steps.current-migration.outputs.content == '-- Enter migration here' }}"
